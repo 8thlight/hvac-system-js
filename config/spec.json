@@ -1,7 +1,16 @@
 {
   "framework" : "jasmine",
   "launch_in_dev" : ["Chrome"],
-  "launch_in_ci" : ["PhantomJS"],
+  "launch_in_ci" : ["Chrome"],
+  "browser_args": {
+    "Chrome": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--remote-debugging-port=9222",
+      "--headless",
+      "--disable-gpu"
+    ]
+  },
   "src_files" : [
     "generated/js/app.js",
     "generated/js/spec.js"
